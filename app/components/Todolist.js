@@ -31,7 +31,7 @@ export function Todolist() {
 
     return (
         <>
-            <h1>Todolist</h1>
+            <h1>✔️ Todolist </h1>
             <div className='inputTask-container'>
                 <Input
                     value={newTask}
