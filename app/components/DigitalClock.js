@@ -21,6 +21,9 @@ const DigitalClock = () => {
         let meridian = hours >= 12 ? 'PM' : 'AM';
 
         hours = hours % 12 || 12;
+        if (minutes < 10) {
+            minutes = `0` + minutes
+        }
 
         return `${hours}:${minutes} ${meridian}`
     }
