@@ -2,7 +2,7 @@
 import React from 'react';
 import { Input, Button, Card, Alert } from 'antd';
 
-const TaskInput = ({ onChange }) => {
+const TaskInput = ({ value, onChange }) => {
 
     function handleTaskChange(e) {
         onChange(e.target.value)
@@ -14,6 +14,7 @@ const TaskInput = ({ onChange }) => {
                 type='text'
                 onChange={handleTaskChange}
                 className='inputTask'
+                value={value}
                 placeholder="Enter Your Task"
             />
         </div>
