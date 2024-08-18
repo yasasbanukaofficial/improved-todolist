@@ -5,7 +5,7 @@ A simple and interactive To-Do List application built using React and Next.js. T
 ## Features
 
 - Add new tasks
-- Add Description
+- Clock displaying feature
 - Delete tasks
 - Simple and responsive design
 
