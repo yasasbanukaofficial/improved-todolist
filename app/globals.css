@@ -43,3 +43,25 @@ body {
   height: 60px;
   background-color: rgb(226, 240, 253);
 }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 20px;
+  width: 150px;
+  height: 30px;
+  border: 2px solid rgb(226, 226, 226);
+  border-radius: 20px
+}

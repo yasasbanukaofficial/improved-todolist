@@ -23,8 +23,10 @@ export function Todolist() {
 
     return (
         <>
-            <h1>✔️ Todolist </h1>
-            <DigitalClock />
+            <div className='header'>
+                <h1>✔️ Todolist </h1>
+                <DigitalClock />
+            </div>
             <div className='inputTask-container'>
                 <TaskInput
                     value={newTask}
