@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid'
 import { Input, Button, Card, Alert } from 'antd';
 import TaskInput from './TaskInput';
 import AddButton from './AddButton';
@@ -11,13 +12,19 @@ export function Todolist() {
 
     function addTask() {
         if (newTask.trim() !== '') {
-            setTasks(t => [...t, newTask]);
+
+            const newTaskObject = {
+                id: uuidv4(),
+                content: newTask
+            }
+
+            setTasks(t => [...t, newTaskObject]);
             setNewTask("");
         }
     }
 
-    function deleteTask(index) {
-        const updatedTasks = tasks.filter((_, i) => i !== index);
+    function deleteTask(id) {
+        const updatedTasks = tasks.filter(tasks => tasks.id !== id);
         setTasks(updatedTasks);
     }
 
@@ -38,14 +45,14 @@ export function Todolist() {
                     />
                 </div>
             </div>
-            {tasks.map((tasks, index) => (
-                <div key={tasks} className='taskDisplay-container'>
+            {tasks.map(tasks => (
+                <div key={tasks.id} className='taskDisplay-container'>
                     <Card
                         className='taskCard'
                         type="inner"
-                        title={tasks}
+                        title={tasks.content}
                         extra={
-                            <Button onClick={() => deleteTask(index)} danger>
+                            <Button onClick={() => deleteTask(tasks.id)} danger>
                                 Delete
                             </Button>
                         }
