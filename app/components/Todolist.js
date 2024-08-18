@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Input, Button, Card, Alert } from 'antd';
 import TaskInput from './TaskInput';
 import AddButton from './AddButton';
+import DigitalClock from './DigitalClock';
 
 export function Todolist() {
     const [tasks, setTasks] = useState([]);
@@ -11,7 +12,7 @@ export function Todolist() {
     function addTask() {
         if (newTask.trim() !== '') {
             setTasks(t => [...t, newTask]);
-            setNewTask("")
+            setNewTask("");
         }
     }
 
@@ -23,8 +24,10 @@ export function Todolist() {
     return (
         <>
             <h1>✔️ Todolist </h1>
+            <DigitalClock />
             <div className='inputTask-container'>
                 <TaskInput
+                    value={newTask}
                     onChange={setNewTask}
                 />
                 <div className='inputTask-container2'>
